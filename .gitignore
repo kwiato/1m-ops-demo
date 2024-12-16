@@ -1,0 +1,9 @@
+# Ignore node_modules folder
+tablets-scaling/node_modules/
+
+# Ignore myenv folder
+tablets-scaling/myenv/
+
+# Ignore files with .Identifier extension
+*.Identifier
+*.map

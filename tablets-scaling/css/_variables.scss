@@ -47,15 +47,15 @@ $brand-teal-muted: #24D5F2;
 $brand-secondary: #3A2D55;
 $brand-cobalt-blue: #2618FA;
 $brand-blue: #326DE6;
-$brand-green: #10CB00;
-$brand-yellow: #FFD400;
+$brand-green: #4CAF50;
+$brand-yellow: #F79000;
 $brand-orange: #FF5500;
 $brand-red: #CE291F;
 $brand-violet: #C26AFF;
 $brand-pink: #FF2CDF;
 
-$primary: $brand-teal;
-$secondary: $brand-secondary;
+$primary: #2196F3;
+$secondary: #4458A3;
 $success: $brand-green;
 $info: $brand-blue;
 $warning: $brand-yellow;
@@ -65,7 +65,7 @@ $dark: $black;
 
 // Cloud Colors
 $cloud-primary: #2196F3;
-$cloud-brand-primary: $primary; // Alias
+$cloud-brand-primary: $brand-teal; // Alias
 $cloud-brand-primary-dark: #27B6DB;
 $cloud-brand-primary-light: #5ADDF2;
 $cloud-brand-primary-lighter: #BAF3FC;
@@ -96,6 +96,8 @@ $cloud-tooltip-bg: rgba(35, 38, 59, 0.85); // #23263BD9
 $cloud-disabled-bg: $gray-200; // Alias
 $cloud-tooltip-text: $gray-200; // Alias
 $cloud-modal-backdrop: rgba(35, 38, 59, 0.5); // #23263B80
+
+
 
 // Cloud Semantic Colors
 $cloud-success: #4CAF50;
@@ -947,7 +949,7 @@ $input-btn-border-width:      var(--#{$prefix}border-width) !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
-$btn-color:                   var(--#{$prefix}body-color) !default;
+$btn-color:                   $light !default;
 $btn-padding-y:               $input-btn-padding-y !default;
 $btn-padding-x:               $input-btn-padding-x !default;
 $btn-font-family:             $input-btn-font-family !default;
@@ -1289,7 +1291,7 @@ $zindex-levels: (
 
 // scss-docs-start nav-variables
 $nav-link-padding-y:                .5rem !default;
-$nav-link-padding-x:                1rem !default;
+$nav-link-padding-x:                1.61rem !default;
 $nav-link-font-size:                null !default;
 $nav-link-font-weight:              null !default;
 $nav-link-color:                    var(--#{$prefix}link-color) !default;
@@ -1298,13 +1300,13 @@ $nav-link-transition:               color .15s ease-in-out, background-color .15
 $nav-link-disabled-color:           var(--#{$prefix}secondary-color) !default;
 $nav-link-focus-box-shadow:         $focus-ring-box-shadow !default;
 
-$nav-tabs-border-color:             var(--#{$prefix}border-color) !default;
+$nav-tabs-border-color:             transparent !default;
 $nav-tabs-border-width:             var(--#{$prefix}border-width) !default;
 $nav-tabs-border-radius:            var(--#{$prefix}border-radius) !default;
-$nav-tabs-link-hover-border-color:  var(--#{$prefix}secondary-bg) var(--#{$prefix}secondary-bg) $nav-tabs-border-color !default;
-$nav-tabs-link-active-color:        var(--#{$prefix}emphasis-color) !default;
-$nav-tabs-link-active-bg:           var(--#{$prefix}body-bg) !default;
-$nav-tabs-link-active-border-color: var(--#{$prefix}border-color) var(--#{$prefix}border-color) $nav-tabs-link-active-bg !default;
+$nav-tabs-link-hover-border-color:  transparent !default;
+$nav-tabs-link-active-color:        $cloud-brand-primary !default;
+$nav-tabs-link-active-bg:           transparent !default;
+$nav-tabs-link-active-border-color: transparent !default;
 
 $nav-pills-border-radius:           var(--#{$prefix}border-radius) !default;
 $nav-pills-link-active-color:       $component-active-color !default;

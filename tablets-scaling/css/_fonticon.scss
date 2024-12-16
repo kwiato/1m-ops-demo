@@ -8,6 +8,7 @@ url("../fonts/fonticon.woff") format("woff");
 [class^="icon-"] {
     font-family: 'fonticon' !important;
     font-style:normal;
+    font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
@@ -89,7 +90,7 @@ $icons: (
 "unlock": "\ea48",
 "database": "\ea49",
 "network": "\ea4a",
-"dashboard-filled": "\ea4b",
+"dashboard": "\ea4b",
 "settings": "\ea4c",
 "star-filled": "\ea4d",
 "star-outline": "\ea4e",
