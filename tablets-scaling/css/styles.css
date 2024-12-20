@@ -13513,7 +13513,7 @@ body {
 }
 
 .small-label {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -13533,4 +13533,24 @@ body {
 
 .btn:not(.btn-light) {
   color: #fff;
+}
+
+.form-control.blend-input {
+  text-align: center;
+  color: #2196F3;
+}
+.form-control.blend-input:not(:focus), .form-control.blend-input:not(:hover) {
+  background: transparent;
+  text-shadow: none;
+  border-color: transparent;
+}
+.form-control.blend-input:hover, .form-control.blend-input:focus {
+  border-color: #2196F3;
+}
+.form-control.blend-input::-webkit-outer-spin-button, .form-control.blend-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-control.blend-input[type=number] {
+  -moz-appearance: textfield;
 }/*# sourceMappingURL=styles.css.map */

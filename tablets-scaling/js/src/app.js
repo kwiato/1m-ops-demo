@@ -118,18 +118,9 @@ const App = () => {
   const Slider = ({ value, min, max, step, onChange, label }) => {
     return (
       <div>
-        <Form.Label column sm="4">{label}</Form.Label>
+        <Form.Label column sm="4" className="small-label">{label}</Form.Label>
         <Row>
-          <Col sm="3">
-            <Form.Control
-              type="number"
-              value={value}
-              min={min}
-              max={max}
-              step={step}
-              onChange={onChange}
-            />
-          </Col>
+          
           <Col>
             <Form.Range
               value={value}
@@ -143,6 +134,18 @@ const App = () => {
               <div className="small-label">{max}</div>
             </div>
           </Col>
+
+          <div style={{ width: '90px' }}>
+            <Form.Control
+              type="number"
+              value={value}
+              min={min}
+              max={max}
+              step={step}
+              onChange={onChange}
+              className="blend-input"
+            />
+          </div>
         </Row>
       </div>
     );
@@ -202,8 +205,8 @@ const App = () => {
     return (
       <Card>
         <Card.Body>
-          <h3>Cluster Properties</h3>
-          <Form>
+          <h3 className="mb-3">Cluster Properties</h3>
+          <Form className="vstack gap-3 mb-3">
             <Slider
               value={numNodes}
               min={1}
@@ -213,9 +216,9 @@ const App = () => {
               label="Number of Nodes"
             />
 
-            <Form.Group as={Row} className="mb-3">
-              <Form.Label column sm="4">Instance Type</Form.Label>
-              <Col sm="8">
+            <Form.Group>
+              <Form.Label column sm="4" className="small-label">Instance Type</Form.Label>
+              <div>
                 <Form.Select
                   value={instanceType}
                   onChange={(e) => setInstanceType(e.target.value)}
@@ -227,7 +230,7 @@ const App = () => {
                   <option value="t3.small">t3.small</option>
                   <option value="t3.medium">t3.medium</option>
                 </Form.Select>
-              </Col>
+              </div>
             </Form.Group>
 
             <div className="hstack gap-3">
@@ -258,8 +261,8 @@ const App = () => {
     return (
       <Card>
         <Card.Body>
-          <h3>Loader Properties</h3>
-          <Form>
+          <h3 className="mb-3">Loader Properties</h3>
+          <Form className="vstack gap-3">
             <Slider
               value={readOps}
               min={500}
@@ -421,7 +424,7 @@ const App = () => {
   const GrafanaContainer = () => { 
     
 
-    const [grafanaUrls, setGrafanaUrls] = useState({"Loading": ""});
+    const [grafanaUrls, setGrafanaUrls] = useState({"Loading Grafana...": ""});
 
     useEffect(() => {
       fetch('../data/grafana_urls.json') // Adjust the path based on where the file is hosted

@@ -355,7 +355,7 @@ body {
 }
 
 .small-label {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: .10em;
     font-weight: 600;
@@ -380,4 +380,29 @@ body {
 
 .btn:not(.btn-light) {
     color: $white;
+}
+.form-control {
+    &.blend-input{
+        text-align: center;
+        color: $primary;
+        
+
+        &:not(:focus), &:not(:hover) {
+            background: transparent;
+            text-shadow: none;
+            border-color: transparent;
+        }
+        &:hover, &:focus {
+            border-color: $primary;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        &[type=number] {
+        -moz-appearance: textfield;
+        }
+    }
 }

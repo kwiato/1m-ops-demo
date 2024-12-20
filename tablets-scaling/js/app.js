@@ -46,14 +46,6 @@
         socket.current.emit(eventName);
       }
     };
-
-    // Save Handlers
-    var handleSaveClusterProperties = function handleSaveClusterProperties() {
-      alert("Cluster Properties Saved:\nNumber of Nodes: ".concat(numNodes, "\nInstance Type: ").concat(instanceType));
-    };
-    var handleSaveLoaderProperties = function handleSaveLoaderProperties() {
-      alert("Loader Properties Saved:\nRead Ops/sec: ".concat(readOps, "\nWrite Ops/sec: ").concat(writeOps, "\nNumber of Loaders: ").concat(numLoaders));
-    };
     var handleClusterToggle = function handleClusterToggle(isRunning) {
       if (isRunning) {
         console.log('Loader Started');
@@ -171,17 +163,9 @@
         label = _ref3.label;
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Form.Label, {
         column: true,
-        sm: "4"
-      }, label), /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, {
-        sm: "3"
-      }, /*#__PURE__*/React.createElement(Form.Control, {
-        type: "number",
-        value: value,
-        min: min,
-        max: max,
-        step: step,
-        onChange: onChange
-      })), /*#__PURE__*/React.createElement(Col, null, /*#__PURE__*/React.createElement(Form.Range, {
+        sm: "4",
+        className: "small-label"
+      }, label), /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Col, null, /*#__PURE__*/React.createElement(Form.Range, {
         value: value,
         min: min,
         max: max,
@@ -193,7 +177,19 @@
         className: "small-label"
       }, min), /*#__PURE__*/React.createElement("div", {
         className: "small-label"
-      }, max)))));
+      }, max))), /*#__PURE__*/React.createElement("div", {
+        style: {
+          width: '90px'
+        }
+      }, /*#__PURE__*/React.createElement(Form.Control, {
+        type: "number",
+        value: value,
+        min: min,
+        max: max,
+        step: step,
+        onChange: onChange,
+        className: "blend-input"
+      }))));
     };
     var ToggleButton = function ToggleButton(_ref4) {
       var initialState = _ref4.initialState,
@@ -248,7 +244,11 @@
         _useState12 = _slicedToArray(_useState11, 2),
         instanceType = _useState12[0],
         setInstanceType = _useState12[1];
-      return /*#__PURE__*/React.createElement(Card, null, /*#__PURE__*/React.createElement(Card.Body, null, /*#__PURE__*/React.createElement("h3", null, "Cluster Properties"), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(Slider, {
+      return /*#__PURE__*/React.createElement(Card, null, /*#__PURE__*/React.createElement(Card.Body, null, /*#__PURE__*/React.createElement("h3", {
+        className: "mb-3"
+      }, "Cluster Properties"), /*#__PURE__*/React.createElement(Form, {
+        className: "vstack gap-3 mb-3"
+      }, /*#__PURE__*/React.createElement(Slider, {
         value: numNodes,
         min: 1,
         max: 10,
@@ -257,15 +257,11 @@
           return setNumNodes(Number(e.target.value));
         },
         label: "Number of Nodes"
-      }), /*#__PURE__*/React.createElement(Form.Group, {
-        as: Row,
-        className: "mb-3"
-      }, /*#__PURE__*/React.createElement(Form.Label, {
+      }), /*#__PURE__*/React.createElement(Form.Group, null, /*#__PURE__*/React.createElement(Form.Label, {
         column: true,
-        sm: "4"
-      }, "Instance Type"), /*#__PURE__*/React.createElement(Col, {
-        sm: "8"
-      }, /*#__PURE__*/React.createElement(Form.Select, {
+        sm: "4",
+        className: "small-label"
+      }, "Instance Type"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Form.Select, {
         value: instanceType,
         onChange: function onChange(e) {
           return setInstanceType(e.target.value);
@@ -314,7 +310,11 @@
         _useState18 = _slicedToArray(_useState17, 2),
         numLoaders = _useState18[0],
         setNumLoaders = _useState18[1];
-      return /*#__PURE__*/React.createElement(Card, null, /*#__PURE__*/React.createElement(Card.Body, null, /*#__PURE__*/React.createElement("h3", null, "Loader Properties"), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(Slider, {
+      return /*#__PURE__*/React.createElement(Card, null, /*#__PURE__*/React.createElement(Card.Body, null, /*#__PURE__*/React.createElement("h3", {
+        className: "mb-3"
+      }, "Loader Properties"), /*#__PURE__*/React.createElement(Form, {
+        className: "vstack gap-3"
+      }, /*#__PURE__*/React.createElement(Slider, {
         value: readOps,
         min: 500,
         max: 5000,
@@ -489,7 +489,7 @@
     // GrafanaContainer Component
     var GrafanaContainer = function GrafanaContainer() {
       var _useState19 = useState({
-          "Loading": ""
+          "Loading Grafana...": ""
         }),
         _useState20 = _slicedToArray(_useState19, 2),
         grafanaUrls = _useState20[0],
